@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Favorite Photo Slideshow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body{
+	background:url('media/smoke-genie.jpg');
+	background-position:top left;
+	background-size:cover;
+	color:white;
+}
+nav ul li{
+	display:block;
+	margin-top:50px;
+}
+nav ul{
+	list-style:none;
+}
+a:link, a:visited{
+	text-decoration:none;
+	background-color:white;
+	color:black;
+	box-shadow:2px 2px gray;
+	padding:20px;
+	margin-bottom:30px;
+}
+a:hover, a:active{
+	text-decoration:none;
+	background-color:darkblue;
+	color:white;
+	box-shadow:2px 2px gray;
+}
+button{
+	text-align:center;
+	width:75px;
+	padding:10px;
+	box-shadow:3px 3px lightseagreen;
+}
+button:hover{
+	background-color:lightseagreen;
+	color:white;
+	box-shadow:2px 2px gray;	
+}
+.center{
+	margin:auto;
+	width:50%;
+}
+section{
+	text-align:center;
+}
+#redBorder{
+	border:4px 4px darkgreen;
+}
+h1{
+	text-align:center;
+	text-shadow:2px 2px black;
+	font-size:2em;
+	background:lightseagreen;
+}
+h3{
+	text-align:center;
+	text-shadow:2px 2px black;
+	font-size:1em;
+	background:lightseagreen;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    padding:15px;
+	img{
+		position:relative;
+		top:50%;
+		left:30%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+    
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    nav ul li{
+		display:inline-block;
+		margin-right:30px;
+	}
+	img{
+		position:relative;
+		top:50%;
+		left:70%;
+	}
+}
+</style>
+<script>
+	var Image = new Array("media/a-single-soul.jpg", "media/custom-tee-two.jpg", "media/badboy.jpg", "media/custom-tees.jpg", "media/hisandhers.jpg", "media/banner.jpg",
+    "media/a-house-divided.jpg", "media/michigan-christmas.jpg", "media/buck.jpg", "media/hemi.jpg", "media/detroit-reverse.jpg", "media/not-my-team.jpg","media/06-racing.jpg");
+	var ImageNum=0;
+	var ImageLength=Image.length - 1;
+	function changeImage(number){
+		ImageNum = ImageNum + number;
+		if (ImageNum > ImageLength)
+			ImageNum=0;
+		if (ImageNum < 0 )
+			imageNum=ImageLength;
+	document.getElementById("mySlides").src = Image[ImageNum];
+	return;
+	}
+</script>
+</head>
+<body class="center">
+	<header class="col-12 col-m-12 " >
+        <h1>At Mama J's</h1>
+        <h3>Items Available to Purchase Now</h3>
+	</header>
+	<section  class="col-12 col-m-12"> 
+		<button type="button" id="previous" style="display:inline-block;margin-right:10%;" onclick="changeImage(-1)">Previous</button>
+		<button type="button" id="next" onclick="changeImage(1)">Next</button>
+	</section>	
+	<section class="col-12 col-m-12" >	
+		<p style=width:30%;margin-left:5%;><img alt="photo slideshow" id="mySlides" src="media/a-single-soul.jpg" style="max-width:150%; min-width:200px; height:auto;padding:10%; 
+	 	 background:lightseagreen; box-shadow:5px 5px darkblue;"></p>
+	</section>
+	
+</body>
+</html>

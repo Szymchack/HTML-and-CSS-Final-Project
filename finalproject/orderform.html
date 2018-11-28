@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Mama J's Order Form</title>
+    <style>
+        body{
+            background-color: black;
+            background-image: url('media/on-the-banks-too.jpg');
+            background-position:left;
+            background-repeat: no-repeat;
+        }
+        article{
+            max-width: 800px;
+            min-width: 400px;
+            overflow: auto;
+            margin-left: 1%;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }  
+        fieldset{
+            border: 2px solid darkseagreen;
+            box-shadow: 2px 2px black;
+            min-width: 350px;
+            flex: 1;
+        } 
+        legend{
+            font-weight: bold;
+            font-size: 125%;
+            color: darkseagreen;
+        }
+        label,h3{
+            font-weight: bold;
+            width: 100px;
+            text-align: right;
+            float: left;
+            margin-right: 10px;
+        }
+        #gradientBack{
+            background: -webkit-radial-gradient(circle, white, lightseagreen);/*For Safari and mobile*/
+            background: -webkit-radial-gradient(circle, white, lightseagreen);/*Standard syntax*/
+            opacity: .9;
+         }
+        input{
+            border: 1px solid black;
+            padding: 3px;
+            margin-bottom: 10px;
+            float: left;
+        }
+        textarea,select{
+            border: 1px solid black;
+            padding: 3px;
+            margin-bottom: 10px;
+        }
+        #button{
+            margin-top: 50px;
+            margin-left: 20%;
+            text-align: center;
+            background-color: green;
+            color: whitesmoke;
+            border-radius: 25px;
+            box-shadow: 3px 3px black;
+            padding: 10%;
+            font-size: 110%;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    </head>
+    <body>
+    <article id="gradientBack">
+    <form name="confirmReg" id="confirmReg"
+    action="mailto:szymchc@mail.nmc.edu" method="get">
+   <fieldset>
+      <legend>Order Reservation</legend>
+      <p><label for="name">Name:</label>
+        <input type="text" id="name" name="name" size="30" maxlength="30" value="" required autofocus/><br>
+        </p>
+        <p><label for="address">Address:</label>
+            <input type="text" id="address" name="address" size="50" maxlength="50" value=""/><br>
+        </p>
+        <p><label for="city">City:</label>
+            <input type="text" id="city" name="city" size="30" maxlength="30" value=""/><br/>
+        </p>
+        <p><label for="state">State:</label>
+            <input type="text" id="state" name="state" size="4" maxlength="4" value="MI"/>
+            <label for="zip" style="width:50px;">Zip:</label>
+            <input type="text" id="zip" name="zip" size="12" maxlength="12" value=""/><br/>
+        </p>
+        <p><label for="email" >Email:</label>
+            <input id="email" name="email" size="30" maxlength="30" value="" type="email" placeholder="example@domain.com" autocomplete required/><br/>
+        </p>
+        <p><label for="cphone" >Cell#</label>
+            <input id="cphone" name="cphone" size="20" maxlength="20" type="tel" placeholder="(989)275-5000" required/><br>
+        </p>
+        <p><label for="wphone" >Work#:</label>
+        <input id="wphone" name="wphone" size="20" maxlength="20" type="tel" placeholder="(989)275-5000"/><br>
+        </p>
+   </fieldset>
+
+   <fieldset id="gradientBack">
+       <legend>Preferences:</legend><br/>
+        <label for="Product" style="vertical-align:top;">Product Selection</label>
+        <select name="Product" id="Product" size="4" type="text" style="width:auto; height: 150px">
+            <option value="Drinkware">Drinkware</option>
+            <option value="Business Decals">Business Decals</option>
+            <option value="Custom Items">Custom Items</option>
+            <option value="Consultation">Consultations</option>
+        </select>
+        
+        <br>
+
+        <p><label for="Selection">Selection1:</label>
+        <input id="selection1" name="selection1" placeholder="Please Make a Selection" list="selection-list1" size="40"/><br>
+        
+        <datalist id="selection-list1">
+            <option value="Drinkware"></option>
+            <option value="Custom Decals"></option>
+            <option value="Consultation"></option>
+            <option value="Business"></option>
+            
+        </datalist>
+        
+         <br>
+         <div style="display:inline-block;">
+            <h3>Payment:</h3>
+            <p style="margin-left: 25px;">
+            <label for="credit">Credit</label>
+            <input type="radio" name="payment" id="credit" value="credit"/><br>
+            <label for="paypal">PayPal</label>
+            <input type="radio" name="payment" id="paypal" value="paypal"/><br>
+            <label for="check">Check</label>
+            <input type="radio" name="payment" id="check" value="check"/><br>
+            <label for="cash">Cash</label>
+            <input type="radio" name="payment" id="cash" value="cash"/><br>
+            </p> 
+         </div>
+         <div>
+             <input type="submit" value="Submit" id="buttons"/>
+             <input type="reset" value="Reset" id="buttons"/>
+         </div>
+         </fieldset>
+         </form>
+         </article>
+
+         </body>
+         </html>
